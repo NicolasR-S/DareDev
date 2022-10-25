@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DareDev", "EssenceDeals\DareDev.csproj", "{86856F13-0B30-4806-A0D5-3080B1F5DB61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86856F13-0B30-4806-A0D5-3080B1F5DB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86856F13-0B30-4806-A0D5-3080B1F5DB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86856F13-0B30-4806-A0D5-3080B1F5DB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86856F13-0B30-4806-A0D5-3080B1F5DB61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80EC0305-B2AE-4081-9693-F2EDAB75D7C0}
+	EndGlobalSection
+EndGlobal
