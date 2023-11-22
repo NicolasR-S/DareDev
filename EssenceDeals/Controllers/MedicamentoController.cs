@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,14 +34,14 @@ namespace EssenceDeals.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Medicamento
+            var Medicamento = await _context.Medicamento
                 .FirstOrDefaultAsync(m => m.CodMedicamento == id);
-            if (medicamento == null)
+            if (Medicamento == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(Medicamento);
         }
 
         // GET: Clientes/Create
@@ -74,8 +74,8 @@ namespace EssenceDeals.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Medicamento.FindAsync(id);
-            if (cliente == null)
+            var medicamento = await _context.Medicamento.FindAsync(id);
+            if (medicamento == null)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EssenceDeals.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(medicamento.CodMedicamento))
+                    if (!MedicamentoExists(medicamento.CodMedicamento))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace EssenceDeals.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Medicamento
+            var medicamento = await _context.Medicamento
                 .FirstOrDefaultAsync(m => m.CodMedicamento == id);
             if (medicamento == null)
             {
@@ -144,7 +144,7 @@ namespace EssenceDeals.Controllers
             {
                 return Problem("Entity set 'Contexto.Medicamento'  is null.");
             }
-            var cliente = await _context.Medicamento.FindAsync(id);
+            var medicamento = await _context.Medicamento.FindAsync(id);
             if (medicamento != null)
             {
                 _context.Medicamento.Remove(medicamento);
