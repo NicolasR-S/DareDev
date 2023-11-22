@@ -5,26 +5,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EssenceDeals.Models
 {
     [Table("Cliente")]
-    public class Cliente
+    public class Medicamento
     {
         [Column("CodCliente")]
         [Display(Name="CodigoCliente")]
         [Key]
-        public int CodCliente { get; set; }
+        public int CodMedicamento { get; set; }
 
 
         [Column("Nome")]
         [Display(Name="Nome")]
-        public string Nome { get; set; }
+        public string NomeMedicamento { get; set; }
 
 
         [Column("Telefone")]
         [Display(Name ="Telefone")]
-        public int Telefone { get; set; }
+        public string destino { get; set; }
 
         [Column("Email")]
         [Display(Name = "E-mail")]
-        public string email { get; set; }
+        public string TipoMedicamento { get; set; }
 
 
 
