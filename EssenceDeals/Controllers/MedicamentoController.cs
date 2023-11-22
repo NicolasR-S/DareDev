@@ -9,7 +9,7 @@ using EssenceDeals.Models;
 
 namespace EssenceDeals.Controllers
 {
-    public class ClientesController : Controller
+    public class MedicamentoController : Controller
     {
         private readonly Contexto _context;
 
