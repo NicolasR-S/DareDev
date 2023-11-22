@@ -18,10 +18,7 @@ namespace EssenceDeals.Controllers
             _context = context;
         }
 
-        public MedicamentoController(Contexto context)
-        {
-    _context = context ?? throw new ArgumentNullException(nameof(context));
-        }
+    
 
         // GET: Clientes
         public async Task<IActionResult> Index()
