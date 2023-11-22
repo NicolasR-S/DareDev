@@ -2,16 +2,16 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Cliente](
-	[CodCliente] [int] IDENTITY(1,1) NOT NULL,
-	[Nome] [nvarchar](80) NOT NULL,
-	[Telefone] [int] NULL,
-	[Email] [nvarchar](80) NOT NULL
+CREATE TABLE [dbo].[Medicamento](
+	[CodMedicamento] [int] IDENTITY(1,1) NOT NULL,
+	[NomeMedicamento] [nvarchar](80) NOT NULL,
+	[destino] [nvarchar](80) NULL,
+	[TipoMedicamento] [nvarchar](80) NOT NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Cliente] ADD PRIMARY KEY CLUSTERED 
+ALTER TABLE [dbo].[Medicamento] ADD PRIMARY KEY CLUSTERED 
 (
-	[CodCliente] ASC
+	[CodMedicamento] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 
