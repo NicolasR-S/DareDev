@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EssenceDeals.Models
 {
-    [Table("Cliente")]
+    [Table("Medicamento")]
     public class Medicamento
     {
         [Column("CodCliente")]
