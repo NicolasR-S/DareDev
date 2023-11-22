@@ -12,7 +12,7 @@ namespace EssenceDeals.Models
 
         }
 
-        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Medicamento> Medicamento { get; set; }
 
         public DbSet<Area> Area { get; set; }
 
