@@ -13,7 +13,7 @@ namespace EssenceDeals.Controllers
     {
         private readonly Contexto _context;
 
-        public ClientesController(Contexto context)
+        public MedicamentoController(Contexto context)
         {
             _context = context;
         }
@@ -21,22 +21,22 @@ namespace EssenceDeals.Controllers
         // GET: Clientes
         public async Task<IActionResult> Index()
         {
-              return _context.Cliente != null ? 
-                          View(await _context.Cliente.ToListAsync()) :
-                          Problem("Entity set 'Contexto.Cliente'  is null.");
+              return _context.Medicamento != null ? 
+                          View(await _context.Medicamento.ToListAsync()) :
+                          Problem("Entity set 'Contexto.Medicamento'  is null.");
         }
 
         // GET: Clientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Cliente == null)
+            if (id == null || _context.Medicamento == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente
-                .FirstOrDefaultAsync(m => m.CodCliente == id);
-            if (cliente == null)
+            var cliente = await _context.Medicamento
+                .FirstOrDefaultAsync(m => m.CodMedicamento == id);
+            if (medicamento == null)
             {
                 return NotFound();
             }
@@ -55,31 +55,31 @@ namespace EssenceDeals.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CodCliente,Nome,Telefone,email")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("CodMedicamento,NomeMedicamento,destino,TipoMedicamento")] Medicamento medicamento)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cliente);
+                _context.Add(medicamento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(cliente);
+            return View(medicamento);
         }
 
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Cliente == null)
+            if (id == null || _context.Medicamento == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente.FindAsync(id);
+            var cliente = await _context.Medicamento.FindAsync(id);
             if (cliente == null)
             {
                 return NotFound();
             }
-            return View(cliente);
+            return View(medicamento);
         }
 
         // POST: Clientes/Edit/5
@@ -87,9 +87,9 @@ namespace EssenceDeals.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CodCliente,Nome,Telefone,email")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("CodMedicamento,NomeMedicamento,destino,TipoMedicamento")] Medicamento medicamento)
         {
-            if (id != cliente.CodCliente)
+            if (id != medicamento.CodMedicamento)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace EssenceDeals.Controllers
             {
                 try
                 {
-                    _context.Update(cliente);
+                    _context.Update(medicamento);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.CodCliente))
+                    if (!ClienteExists(medicamento.CodMedicamento))
                     {
                         return NotFound();
                     }
@@ -114,25 +114,25 @@ namespace EssenceDeals.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cliente);
+            return View(medicamento);
         }
 
         // GET: Clientes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Cliente == null)
+            if (id == null || _context.Medicamento == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente
-                .FirstOrDefaultAsync(m => m.CodCliente == id);
-            if (cliente == null)
+            var cliente = await _context.Medicamento
+                .FirstOrDefaultAsync(m => m.CodMedicamento == id);
+            if (medicamento == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(medicamento);
         }
 
         // POST: Clientes/Delete/5
@@ -140,23 +140,23 @@ namespace EssenceDeals.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Cliente == null)
+            if (_context.Medicamento == null)
             {
-                return Problem("Entity set 'Contexto.Cliente'  is null.");
+                return Problem("Entity set 'Contexto.Medicamento'  is null.");
             }
-            var cliente = await _context.Cliente.FindAsync(id);
-            if (cliente != null)
+            var cliente = await _context.Medicamento.FindAsync(id);
+            if (medicamento != null)
             {
-                _context.Cliente.Remove(cliente);
+                _context.Medicamento.Remove(medicamento);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClienteExists(int id)
+        private bool MedicamentoExists(int id)
         {
-          return (_context.Cliente?.Any(e => e.CodCliente == id)).GetValueOrDefault();
+          return (_context.Medicamento?.Any(e => e.CodMedicamento == id)).GetValueOrDefault();
         }
     }
 }
