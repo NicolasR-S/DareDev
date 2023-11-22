@@ -6,27 +6,27 @@
 
 <h1>Edit</h1>
 
-<h4>Cliente</h4>
+<h4>Medicamento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CodCliente" />
+            <input type="hidden" asp-for="CodMedicamento" />
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+                <label asp-for="NomeMedicamento" class="control-label"></label>
+                <input asp-for="NomeMedicamento" class="form-control" />
+                <span asp-validation-for="NomeMedicamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
+                <label asp-for="destino" class="control-label"></label>
+                <input asp-for="destino" class="form-control" />
+                <span asp-validation-for="destino" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
+                <label asp-for="TipoMedicamento" class="control-label"></label>
+                <input asp-for="TipoMedicamento" class="form-control" />
+                <span asp-validation-for="TipoMedicamento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
