@@ -161,12 +161,7 @@ namespace EssenceDeals.Controllers
           return (_context.Medicamento?.Any(e => e.CodMedicamento == id)).GetValueOrDefault();
         }
 
-        app.UseEndpoints(endpoints =>
-        {
-          endpoints.MapControllerRoute(
-              name: "default",
-              pattern: "{controller=Medicamento}/{action=Index}/{id?}");
-         });
+        
     }
 
     
